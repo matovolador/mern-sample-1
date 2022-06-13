@@ -1,0 +1,16 @@
+# Use root/example as user/password credentials
+version: '3.7'
+
+services:
+
+  server:
+    build: server
+    environment: 
+      - MONGODB_CONNSTRING=mongodb://root:password@mongodb
+    ports:
+      - 3000:3000
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
