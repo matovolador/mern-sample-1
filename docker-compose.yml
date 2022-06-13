@@ -9,8 +9,19 @@ services:
       - MONGODB_CONNSTRING=mongodb://root:password@mongodb
     ports:
       - 3000:3000
+    networks:
+      - mern-sample-1-network
   mongodb:
     image: mongo:5.0
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=example
+    networks:
+      - mern-sample-1-network
+    volumes:
+      - mern-sample-1
+    
+networks:
+ mern-sample-1-network:
+volumes:
+  mern-sample-1:
