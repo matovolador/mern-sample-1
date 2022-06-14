@@ -20,8 +20,6 @@ services:
       - MONGO_INITDB_DATABASE=db
     ports:
       - '5601:5601'
-    expose:
-      - 5601
     networks:
       - mern-sample-1-network
     volumes:
