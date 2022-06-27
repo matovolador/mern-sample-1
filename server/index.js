@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use('/posts',postRoutes);
 
-const CONNECTION_URL = "mongodb://root:password@localhost:5601/db?authSource=admin"
+const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const PORT = process.env.PORT || 5000;
 
