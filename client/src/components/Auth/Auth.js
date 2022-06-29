@@ -6,12 +6,14 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles'
 import Input from './Input'
 import Icon from './icon'
+import {useNavigate} from 'react-router-dom';
 
 const Auth = () => {
     const classes = useStyles();
     const [isSignup, setIsSingup] = useState(false)
     const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch()
+    const navigate = useNavigate();
     const handleSubmit = () => {
 
     };
@@ -30,6 +32,7 @@ const Auth = () => {
 
         try {
             dispatch({type:"AUTH",data:{result, token}})
+            navigate.push("/");
         } catch (error) {
             console.log(error);
         }
