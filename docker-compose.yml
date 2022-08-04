@@ -5,20 +5,17 @@ services:
   server:
     build: server
     environment: 
-      - MONGODB_CONNSTRING=mongodb://root:password@mongodb:5601/db?authSource=admin
+      - MONGODB_CONNSTRING=mongodb://root:password@mongodb:27017/db?authSource=admin
     ports:
-      - 3000:3000
+      - 80:3000
     networks:
       - mern-sample-1-network
   mongodb:
     image: mongo:5.0
-    command: mongod --port 5601
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
       - MONGO_INITDB_DATABASE=db
-    ports:
-      - '5601:5601'
     networks:
       - mern-sample-1-network
     volumes:
