@@ -7,7 +7,7 @@ services:
     environment: 
       - MONGODB_CONNSTRING=mongodb://root:password@mongodb:27017/db?authSource=admin
     ports:
-      - 80:3000
+      - 5000:3000
     networks:
       - mern-sample-1-network
   mongodb:
